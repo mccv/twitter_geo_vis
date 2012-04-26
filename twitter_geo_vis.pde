@@ -1,4 +1,6 @@
 import com.twitter.processing.*;
+
+import com.twitter.processing.*;
 import processing.net.*;
 import java.util.Set;
 
@@ -74,7 +76,7 @@ void setup() {
     String password = lines[1];
     // open a geo hose connection, monitoring THE WORLD
     // IMPORTANT: in all likelihood you wont be able to monitor a bounding box of this size
-    TweetStream stream = new TweetStream(this, "stream.twitter.com", 80, "1/statuses/filter.json?locations=-180,-90,180,90", user, password);
+    TweetStream stream = new TweetStream(this, "https", "stream.twitter.com", 443, "1/statuses/filter.json?locations=-180,-90,180,90", user, password);
     stream.go();
   } else {
     println("couldn't load username/password from credentials.txt");
